@@ -207,3 +207,7 @@ let sum = 0;
     });
     
  }
+ sotibOlish.addEventListener("click", () => {
+    cardsavat.innerHTML = nall
+    summa.textContent = 0;
+ })
