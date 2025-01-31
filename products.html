@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Magazin </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="w-10/12 mx-auto bg-slate-200">
+
+    <section>
+        <div class="m-3 h-[200px] w-11/12 w-full  flex justify-center items-center">
+            <a href="https://www.gazeta.uz/ru/2018/07/21/elmakon/">
+                <img class="w-full " src="https://oa.afishamedia.net/www/images/86859e80e025d7055252994c061df807.jpg"
+                    alt="">
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <h1 class=" w-10/12 text-[45px] text-center py-4 font-bold">Online Magazin</h1>
+    </main>
+    <nav class="flex justify-between items-center py-4 mx-10">
+        <ul class="flex  space-x-4">
+            <li class="text-[24px]  hover:text-slate-500 not-italic text-slate-800 font-bold"><a href="index.html"
+                    class="text-[20px]">Home</a>
+            </li>
+            <li class="text-[24px]  hover:text-slate-500 not-italic text-slate-800 font-bold"><a href="products.html"
+                    class="text-[20px]">Products</a></li>
+            <li class="text-[24px]  hover:text-slate-500 not-italic text-slate-800 font-bold"><a href="contact.html"
+                    class="text-[20px]">Contact</a></li>
+        </ul>
+        <div class="flex items-center gap-3">
+            <input type="text" class=" py-3 px-4 border-2 border-slate-800 rounded-lg" placeholder="Search"
+                aria-placeholder="Maxsulot qidirish">
+            <button class="active:bg-slate-500 bg-slate-800 text-white px-8 py-3 text-xl rounded-lg">
+                Search
+            </button>
+        </div>
+        <button  class="active:bg-slate-500 bg-slate-800 text-white px-8 py-3 text-xl rounded-lg" id="qoshish">
+            Mahsulot qo'shish
+        </button>
+        <button
+            class="bg-slate-800 text-white active:bg-slate-500 px-8 py-3 text-xl rounded-lg flex items-center justify-center gap-4"
+            onclick="Shovcard()">
+            <p>Savat</p>
+            <i class="fa-solid fa-cart-shopping"> <span id="count">0</span></i>
+
+        </button>
+    </nav>
+
+
+
+
+    <section class="mt-10 grid grid-cols-4 gap-5 " id="cardlist">
+        <!-- <div class="">
+            <div class="border-2 border-slate-800 rounded-lg">
+                <img class=" rounded-t-lg" src="https://storage.kun.uz/source/5/Zxr9IEut1Mqxb2t9qafU7K2DHOHEcZqY.jpg" alt="">
+                <div class="p-2 ">
+                    <h2 class="py-1 text-[18px]">Maxsulot nomi</h2>
+                    <p class="py-1 text-[18px]">Maxsulot narxi</p>
+                    <p class="py-1 text-[18px]">Maxsulot soni</p>
+                    <button class="bg-slate-800 text-white px-8 py-3 text-xl rounded-lg flex items-center justify-center gap-4 mx-auto active:bg-slate-500">Sotib olish</button>
+                </div>
+            </div>
+        </div> -->
+
+
+    </section>
+
+    <div class=" border-2  w-[450px] h-[80vh] overflow-scroll
+    fixed top-[40px] left-[40px]  botton-[40px] rounded-lg bg-white translate-x-[-600px] duration-200 "
+        id="cardSavat">
+        <div class="flex justify-between items-center mx-6 my-4">
+            <h1 class="text-xl font-awesome text-center ">Maxsulotlar royxati</h1>
+            <button class="text-xl bg-slate-800 active:bg-slate-500 rounded-lg px-2 text-white"
+                onclick="Shovcard()">X</button>
+        </div>
+        <div id="carssavatli"  class="min-h-[400px]">
+            <!-- <div class="flex justify-between items-center mx-6 my-4">
+                <h1 class="text-xl font-awesome text-center ">Maxsulotlar royxati</h1>
+                <button class="text-xl bg-slate-800 active:bg-slate-500 rounded-lg px-2 text-white"
+                    onclick="Shovcard()">X</button>
+            </div> -->
+
+        </div>
+
+
+        <div class="bg-white w-full h-[40px]  botton-[0] flex justify-center gap-4 items-center">
+            <p class="text-xl font-bold">Jami: <span id="summa">0</span> so'm</p>
+            <button id="sotibolish" class=" active:bg-slate-500 bg-slate-800 text-white px-8 py-3 text-xl rounded-lg  "> Sotib
+                olish</button>
+        </div>
+    </div>
+
+    <footer class="py-10 text-2xl font-bold px-10 flex justify-between items-center text-center text-slate-800">
+        <p>�� 2022 Online Magazin. All rights reserved.</p>
+        <p>+998 90 126 11 16</p>
+    </footer>
+
+
+    <section class=" fixed top-[100px] translate-x-[-3000px] duration-200" id="productadd">
+        <div class="cantainer w-8/12 mx-auto border-2 rounded-xl bg-slate-200 ">
+            <h2 class=" text-center text-3xl font-bold my-3">Maxsulot qoshish <button class=" ml-[490px] text-3xl font-bold my-3" id="qoshishx" >X</button></h2>
+             <form action="">
+            <div class="flex justify-between items-center gap-5 p-4">
+                <div class="w-1/2">
+                    <input type="text" id="nomi" placeholder="Maxsulot nomi" class="w-full border-2 border-slate-800 rounded-lg py-2  mb-5 px-4">
+                    <input type="text" id="narx" placeholder="Mahsulot narhi" class="w-full border-2 border-slate-800 rounded-lg py-2 mb-5 px-4" >
+                    <input type="text" id="rangi" placeholder="Mahsulot rangi" class="w-full border-2 border-slate-800 rounded-lg py-2  mb-5 px-4" >
+                </div>
+                <div class="w-1/2">
+                   <input type="text" id="rasm" placeholder="Mahsulot rasmmi" class="w-full border-2 border-slate-800 rounded-lg py-2 mb-5 px-4" >
+                    <input type="text" id="soni" placeholder="Mahsulot soni" class="w-full border-2 border-slate-800 rounded-lg py-2 mb-5 px-4">
+                    <input type="text" id="model" placeholder="Mahsulot modeli" class="w-full border-2 border-slate-800 rounded-lg mb-5 py-2 px-4">
+                </div>
+            </form>
+        </div>
+    
+        <button id="cantactbtn" class=" active:bg-slate-500 ml-[84px] bg-slate-800 text-white  py-3 w-8/10 m-4 text-xl rounded-lg">Qo'shish</button>
+    </section>
+
+
+
+    <script src="./Js/products.js"></script>
+    <script src="./Js/cantact.js"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>
